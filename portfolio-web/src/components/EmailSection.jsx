@@ -4,40 +4,39 @@ import LinkedIn from "../assets/images/linkedin-icon.svg";
 import { Link } from "react-router-dom";
 
 const EmailSection = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    subject: "",
-    message: "",
-  });
   const [statusMessage, setStatusMessage] = useState(""); // Added state for status message
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+const sendEmail = async (event) => {
+  event.preventDefault();
+  const formData = new FormData(event.target);
 
-  const sendEmail = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:5000/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+  formData.append("access_key", "9fdaf5d2-4a77-4fb0-9f62-21430cff0b1f");
 
-      const result = await response.json();
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
 
-      if (result.success) {
-        // Set success message
-        setStatusMessage("Email sent successfully!");
-      } else {
-        // Set failure message
-        setStatusMessage("Failed to send email. Please try again.");
-      }
-    } catch (error) {
-      // Set error message for network issues
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      setStatusMessage("Email sent successfully!");
+    } else {
       setStatusMessage("Failed to send email. Please try again.");
     }
-  };
+  } catch (error) {
+    setStatusMessage("An error occurred. Please check your connection.");
+  }
+};
+
 
   return (
     <section className="grid md:grid-cols-2 my-12 md:my-6 py-24 relative ">
@@ -72,7 +71,6 @@ const EmailSection = () => {
             name="email"
             id="email"
             placeholder="youremail@gmail.com"
-            onChange={handleChange}
             required
             className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
           />
@@ -90,7 +88,7 @@ const EmailSection = () => {
             name="subject"
             id="subject"
             placeholder="Just saying hi!"
-            onChange={handleChange}
+        
             required
             className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
           />
@@ -107,7 +105,7 @@ const EmailSection = () => {
             name="message"
             id="message"
             placeholder="Let's talk about..."
-            onChange={handleChange}
+           
             className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
           />
         </div>
