@@ -6,5 +6,10 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(),
     tailwindcss(),
+    vercel()
   ],
+  server: {
+    port: process.env.PORT ? parseInt(process.env.PORT, 10) : 3000,
+  },
+  
 })
