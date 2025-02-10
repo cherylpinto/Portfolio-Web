@@ -2,12 +2,12 @@ import React from "react";
 import { CodeBracketIcon,EyeIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
 
-const ProjectCard = ({ imgURL, title, description,gitUrl,previewUrl }) => {
+const ProjectCard = ({ imgUrl, title, description,gitUrl,previewUrl }) => {
   return (
     <div>
       <div
         className="h-52 md:h-72 rounded-t-xl relative group"
-        style={{ background: `url(${imgURL})`, backgroundSize: "cover" }}
+        style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
       >
         <div
           className="overlay flex items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] opacity-0 group-hover:opacity-60 transition-all duration-500"

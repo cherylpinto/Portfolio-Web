@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import img1 from "../assets/images/1.png";
 import img2 from "../assets/images/2.png";
@@ -6,6 +6,7 @@ import img3 from "../assets/images/3.png";
 import img4 from "../assets/images/4.png";
 import img5 from "../assets/images/5.png";
 import ProjectTag from "./ProjectTag";
+import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
@@ -55,14 +56,20 @@ const projectsData = [
 ];
 const ProjectSection = () => {
   const [tag, setTag] = useState("All");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const handleTagChange = (newTag) => {
     setTag(newTag);
   };
   const filteredProjects = projectsData.filter((project) =>
     project.tag.includes(tag)
   );
+  const cardVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
   return (
-    <div>
+    <section id="projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
@@ -83,19 +90,26 @@ const ProjectSection = () => {
           isSelected={tag === "Mobile"}
         ></ProjectTag>
       </div>
-      <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-        {filteredProjects.map((project) => (
+      <ul ref={ref} className="grid md:grid-cols-2 gap-8 md:gap-12">
+        {filteredProjects.map((project,index) => (
+          <motion.li
+          key={index}
+          variants={cardVariants}
+          initial="initial"
+          animate={isInView ? "animate" : "initial"}
+          transition={{ duration: 0.3, delay: index * 0.4 }}
+        >
           <ProjectCard
-            key={project.id}
             title={project.title}
             description={project.description}
-            imgURL={project.image}
+            imgUrl={project.image}
             gitUrl={project.gitUrl}
             previewUrl={project.previewUrl}
-          ></ProjectCard>
+          />
+        </motion.li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 };
 

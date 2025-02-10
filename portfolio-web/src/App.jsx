@@ -1,5 +1,6 @@
 import "./App.css";
 import AboutSection from "./components/AboutSection";
+import Achievements from "./components/Achievements";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <div className="container mt-28 mx-auto px-12 py-4">
         <HeroSection />
+        <Achievements/>
         <AboutSection />
         <ProjectSection/>
         <EmailSection/>
