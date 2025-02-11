@@ -2,8 +2,9 @@ import React, { useState, useTransition } from "react";
 import Image from "../assets/images/about-image.png";
 import TabButton from "./TabButton";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { IoSchool } from "react-icons/io5";
-import { RiVerifiedBadgeFill } from "react-icons/ri";
+import certified from "../assets/images/certified.png";
+import education from "../assets/images/education.png";
+import arrow from "../assets/images/arrow.png";
 
 
 const TAB_DATA = [
@@ -11,14 +12,14 @@ const TAB_DATA = [
     id: "skills",
     title: "Skills",
     content: (
-      <ul>
-        <li className="flex items-center gap-2"><FaArrowRightLong className="h-3 w-3"/>HTML</li>
-        <li className="flex items-center gap-2"><FaArrowRightLong className="h-3 w-3"/>CSS</li>
-        <li className="flex items-center gap-2"><FaArrowRightLong className="h-3 w-3"/>JavaScript</li>
-        <li className="flex items-center gap-2"><FaArrowRightLong className="h-3 w-3"/>React</li>
-        <li className="flex items-center gap-2"><FaArrowRightLong className="h-3 w-3"/>Node.js</li>
-        <li className="flex items-center gap-2"><FaArrowRightLong className="h-3 w-3"/>Express</li>
-        <li className="flex items-center gap-2"><FaArrowRightLong className="h-3 w-3"/>PostgreSQL/MySQL/MongoDB</li>
+      <ul className="">
+        <li className="flex items-center gap-2"><img src={arrow} className="w-4.5 h-3"></img>HTML</li>
+        <li className="flex items-center gap-2 "><img src={arrow} className="w-4.5 h-3"></img>CSS</li>
+        <li className="flex items-center gap-2 "><img src={arrow} className="w-4.5 h-3"></img>JavaScript</li>
+        <li className="flex items-center gap-2 "><img src={arrow} className="w-4.5 h-3"></img>React</li>
+        <li className="flex items-center gap-2 "><img src={arrow} className="w-4.5 h-3"></img>Node.js</li>
+        <li className="flex items-center gap-2 "><img src={arrow} className="w-4.5 h-3"></img>Express</li>
+        <li className="flex items-center gap-2 "><img src={arrow} className="w-4.5 h-3"></img>PostgreSQL/MySQL/MongoDB</li>
       </ul>
     ),
   },
@@ -27,9 +28,9 @@ const TAB_DATA = [
     title: "Education",
     content: (
       <ul className="space-y-2">
-        <li className="flex items-center gap-2"><IoSchool className="h-4 w-4" />10th Std: Udayachal High School, Vikhroli</li>
-        <li className="flex items-center gap-2"><IoSchool className="h-4 w-4" />12th Std: Pace Junior Science College, Powai</li>
-        <li className="inline-flex items-start gap-2"><IoSchool className="h-5 w-5" />Bachelor of Technology: Computer Science, K.J Somaiya College of Engineering, Vidyavihar</li>
+        <li className="flex gap-2 "><img src={education} className="w-4.5 h-4.5"></img>10th Std: Udayachal High School, Vikhroli</li>
+        <li className="flex gap-2 "><img src={education} className="w-4.5 h-4.5"></img>12th Std: Pace Junior Science College, Powai</li>
+        <li className="flex gap-2 "><img src={education} className="w-4.5 h-4.5"></img>Bachelor of Technology: Computer Science, K.J Somaiya College of Engineering, Vidyavihar</li>
       </ul>
     ),
   },
@@ -37,11 +38,11 @@ const TAB_DATA = [
     id: "certifications",
     title: "Certifications",
     content: (
-      <ul>
-        <li className="flex items-center gap-2"><RiVerifiedBadgeFill />Certified: Data Structures - Coursera</li>
-        <li className="flex items-center gap-2"><RiVerifiedBadgeFill />Certified: Design Analysis of Algorithm - Udemy</li>
-        <li className="flex items-center gap-2"><RiVerifiedBadgeFill />Certified: Frontend Developer Capstone - Coursera</li>
-        <li className="flex items-center gap-2"><RiVerifiedBadgeFill />Certified: Agnirva Space Internship Program - Agnirva</li>
+      <ul className="space-y-2 ">
+        <li className="flex gap-2 "><img src={certified} className="w-5 h-5"></img>Certified: Data Structures - Coursera</li>
+        <li className="flex gap-2 "><img src={certified} className="w-5 h-5"></img>Certified: Design Analysis of Algorithm - Udemy</li>
+        <li className="flex gap-2 "><img src={certified} className="w-5 h-5"></img>Certified: Frontend Developer Capstone - Coursera</li>
+        <li className="flex gap-2 "><img src={certified} className="w-5 h-5"></img>Certified: Agnirva Space Internship Program - Agnirva</li>
         
       </ul>
     ),

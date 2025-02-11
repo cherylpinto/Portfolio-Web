@@ -11,47 +11,49 @@ const projectsData = [
   {
     id: 1,
     title: "React Portfolio Website",
-    description: "Project 1 description",
+    description:
+      "A React portfolio website built using Tailwind CSS to showcase projects, skills, and experience in a sleek, responsive design. It features smooth animations, reusable components, and a seamless user experience.",
     image: img1,
     tag: ["All", "Web", "Mobile"],
     gitUrl: "https://github.com/cherylpinto/Portfolio-Website",
-    previewUrl: "/",
+    previewUrl: "",
   },
   {
     id: 2,
     title: "Book Store Website",
-    description: "Project 2 description",
+    description:
+      "A Book Store Website built using the MERN stack with full CRUD functionality. It allows users to add, edit, delete, and manage books, along with features like user authentication, book browsing, and a responsive design for a seamless experience.",
     image: img2,
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/cherylpinto/bookstore",
+    previewUrl: "",
   },
   {
     id: 3,
     title: "Food Ordering Website",
-    description: "Project 3 description",
+    description: "A Food Ordering Website built using the MERN stack for a seamless online food ordering experience. It includes user authentication, a dynamic food menu, a shopping cart, and order placement features. The responsive design ensures a smooth and intuitive user experience across all devices.",
     image: img3,
     tag: ["All", "Web", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/cherylpinto/food-web ",
+    previewUrl: "",
   },
   {
     id: 4,
     title: "Little Lemon Website",
-    description: "Restaurant Reservation Website",
+    description: "Restaurant Table-Reservation Website bulit using React which contains the About page, Menu page, Reservation page, and optional Order online page to order food",
     image: img4,
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/cherylpinto/LittleLemon",
+    previewUrl: "",
   },
   {
     id: 5,
     title: "NFT Website",
-    description: "Authentication and CRUD operations",
+    description: "NFT Website is built using React  for a seamless and interactive experience. It showcases NFT's featuring NFT listings and biddings",
     image: img5,
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/cherylpinto/nft",
+    previewUrl: "",
   },
 ];
 const ProjectSection = () => {
@@ -91,22 +93,22 @@ const ProjectSection = () => {
         ></ProjectTag>
       </div>
       <ul ref={ref} className="grid md:grid-cols-2 gap-8 md:gap-12">
-        {filteredProjects.map((project,index) => (
+        {filteredProjects.map((project, index) => (
           <motion.li
-          key={index}
-          variants={cardVariants}
-          initial="initial"
-          animate={isInView ? "animate" : "initial"}
-          transition={{ duration: 0.3, delay: index * 0.4 }}
-        >
-          <ProjectCard
-            title={project.title}
-            description={project.description}
-            imgUrl={project.image}
-            gitUrl={project.gitUrl}
-            previewUrl={project.previewUrl}
-          />
-        </motion.li>
+            key={index}
+            variants={cardVariants}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            transition={{ duration: 0.3, delay: index * 0.4 }}
+          >
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              imgUrl={project.image}
+              gitUrl={project.gitUrl}
+              previewUrl={project.previewUrl}
+            />
+          </motion.li>
         ))}
       </ul>
     </section>

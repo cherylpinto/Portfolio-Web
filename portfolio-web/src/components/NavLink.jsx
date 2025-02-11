@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavLink = ({ href, title }) => {
+const NavLink = ({ href, title, setIsOpen }) => {
   
   const handleClick = (e) => {
     if (href.startsWith("#")) {
       e.preventDefault();
       const sectionId = href.substring(1); // Remove #
       document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+      
     }
+    if (setIsOpen) setIsOpen(false);
   }
   return (
     <a

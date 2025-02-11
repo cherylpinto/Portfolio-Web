@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import ProjectSection from "./components/ProjectSection";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <EmailSection/>
       </div>
       <Footer/>
+      <ScrollToTopButton/>
     </div>
   );
 }
