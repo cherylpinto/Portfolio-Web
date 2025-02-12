@@ -16,7 +16,7 @@ const projectsData = [
     image: img1,
     tag: ["All", "Web", "Mobile"],
     gitUrl: "https://github.com/cherylpinto/Portfolio-Website",
-    previewUrl: "",
+    previewUrl: "https://portfolio-cheryl-pinto.vercel.app/",
   },
   {
     id: 2,
