@@ -13,7 +13,7 @@ const HeroSection = () => {
           transition={{ duration: 0.75 }}
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
-          <h1 className="text-white mb-4 sm:text-5xl lg:text-7xl text-4xl font-extrabold">
+          <h1 className="text-white mb-4 sm:text-4xl lg:text-7xl text-2xl font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
               Hello I'm,{" "}
             </span>
@@ -31,7 +31,7 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6 sm:mr-30">
+          <p className="text-[#ADB7BE] text-base  lg:text-xl text-sm mb-6 sm:mr-15">
             Currently Pursuing B-Tech in Computer Science Engineering
             with a strong problem-solving mindset, adaptability and a commitment to continuous learning. Highly
             motivated to gain hands-on experience through internships and apply
