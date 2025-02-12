@@ -15,7 +15,7 @@ const projectsData = [
       "A React portfolio website built using Tailwind CSS to showcase projects, skills, and experience in a sleek, responsive design. It features smooth animations, reusable components, and a seamless user experience.",
     image: img1,
     tag: ["All", "Web", "Mobile"],
-    gitUrl: "https://github.com/cherylpinto/Portfolio-Website",
+    gitUrl: "https://github.com/cherylpinto/Portfolio-Web",
     previewUrl: "https://portfolio-cheryl-pinto.vercel.app/",
   },
   {
