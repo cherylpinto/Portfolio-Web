@@ -31,7 +31,7 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] text-base  lg:text-xl text-sm mb-6 sm:mr-15">
+          <p className="text-[#ADB7BE]  lg:text-xl text-xs mb-6 sm:mr-15">
             Currently Pursuing B-Tech in Computer Science Engineering
             with a strong problem-solving mindset, adaptability and a commitment to continuous learning. Highly
             motivated to gain hands-on experience through internships and apply
