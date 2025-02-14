@@ -40,7 +40,7 @@ const sendEmail = async (event) => {
 
 
   return (
-    <section id="contact" className="grid md:grid-cols-2 my-12 md:my-6 py-24 relative ">
+    <section id="contact" className="grid md:grid-cols-2 my-2 md:my-6 py-24 relative ">
       <div className="bg-[radial-gradient(ellipse_at_center,_rgba(128,0,128,0.5),_transparent)] rounded-full h-80 w-80 z-0 blur-lg absolute top-full -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div>
         <h5 className="text-xl font-bold text-white my-2">Let's Connect</h5>
@@ -50,15 +50,15 @@ const sendEmail = async (event) => {
           to get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link to="github.com">
+          <Link to="https://github.com/cherylpinto">
             <img src={Github} alt="Github"></img>
           </Link>
-          <Link to="linkedin.com">
+          <Link to="https://www.linkedin.com/in/cheryl-pinto-868776335/">
             <img src={LinkedIn} alt="LinkedIn"></img>
           </Link>
         </div>
       </div>
-      <form onSubmit={sendEmail} className="flex flex-col sm:mt-6 gap-4">
+      <form onSubmit={sendEmail} className="flex flex-col mt-6 gap-4">
         <div className="mb-6">
           <label
             htmlFor="email"
