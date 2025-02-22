@@ -72,7 +72,7 @@ const AboutSection = () => {
             expand my knowledge and skill set. I am a team player and I am
             excited to work with others to create amazing applications.
           </p>
-          <div className="flex flex-row justify-start mt-8">
+          <div className="flex flex-row justify-start mt-8 xl:text-lg">
             {TAB_DATA.map((T) => (
               <TabButton
                 key={T.id}
@@ -83,7 +83,7 @@ const AboutSection = () => {
               </TabButton>
             ))}
           </div>
-          <div className="mt-8">
+          <div className="mt-8 xl:text-lg">
             {TAB_DATA.find((T) => T.id === tab)?.content}
           </div>
         </div>
