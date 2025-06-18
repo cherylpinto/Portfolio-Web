@@ -3,3 +3,11 @@ html {
   scroll-padding-top: 100px; /* Adjust based on navbar height */
   scroll-behavior: smooth;
 }
+/* In your global CSS (e.g., index.css or tailwind.css) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

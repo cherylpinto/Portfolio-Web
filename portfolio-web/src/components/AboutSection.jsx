@@ -143,7 +143,7 @@ const AboutSection = () => {
             team player and I am excited to work with others to create amazing
             applications.
           </p>
-          <div className="flex flex-row justify-start mt-8 ">
+          <div className="flex flex-row justify-start mt-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
             {TAB_DATA.map((T) => (
               <TabButton
                 key={T.id}
