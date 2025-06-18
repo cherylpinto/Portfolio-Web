@@ -12,15 +12,13 @@ const EmailSection = () => {
   useEffect(() => {
   if (isSubmitted) {
     const interval = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev > 1) return prev - 1;
-        clearInterval(interval); // stop interval at 1 -> 0 transition
-        return 0;
-      });
+      setCountdown((prev) => prev - 1);
     }, 1000);
 
     const timeout = setTimeout(() => {
-      navigate("/");
+      setIsSubmitted(false);      // Show form again
+      setStatusMessage("");       // Clear message
+      setCountdown(5);            // Reset timer
     }, 5000);
 
     return () => {
@@ -28,7 +26,8 @@ const EmailSection = () => {
       clearTimeout(timeout);
     };
   }
-}, [isSubmitted, navigate]);
+}, [isSubmitted]);
+
 
 
   const handleSubmit = async (e) => {
@@ -49,7 +48,7 @@ const EmailSection = () => {
 
       if (result.ok || result.success) {
         setIsSubmitted(true);
-        setStatusMessage("Message sent successfully. Redirecting to homepage...");
+        setStatusMessage("Message sent successfully.");
       } else {
         setStatusMessage("Something went wrong. Please try again.");
       }
