@@ -5,6 +5,8 @@ import img2 from "../assets/images/2.png";
 import img3 from "../assets/images/3.png";
 import img4 from "../assets/images/4.png";
 import img5 from "../assets/images/5.png";
+import img6 from "../assets/images/6.jpg";
+import img7 from "../assets/images/7.png";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
 const projectsData = [
@@ -30,6 +32,24 @@ const projectsData = [
   },
   {
     id: 3,
+    title: "CIS Portal",
+    description: "Course Information Sheet (CIS) is a portal for Faculties to automatically analyse the course outcomes achieved by entering the marks for a course. This portal has various perspectives apart from faculty like CIS coordinator, Course Coordinator, HOD,etc",
+    image: img7,
+    tag: ["All", "Web", "Mobile"],
+    gitUrl: "https://github.com/Raunakg2005/CIS_SwDC.git",
+    previewUrl: "",
+  },
+  {
+    id: 4,
+    title: "Aurelia's - Restaurant Table Reservation Website",
+    description: "Aurelia's is a responsive restaurant table reservation system that allows users to book tables and admins to manage reservations. The website features OTP-based email verification and real-time table availability tracking. Built using HTML, CSS, JavaScript, PHP, and MySQL, it runs on a local server environment using XAMPP.",
+    image: img6,
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/cherylpinto/WPL_B2_G5",
+    previewUrl: "",
+  },
+  {
+    id: 5,
     title: "Food Ordering Website",
     description: "A Food Ordering Website built using the MERN stack for a seamless online food ordering experience. It includes user authentication, a dynamic food menu, a shopping cart, and order placement features. The responsive design ensures a smooth and intuitive user experience across all devices.",
     image: img3,
@@ -38,7 +58,7 @@ const projectsData = [
     previewUrl: "",
   },
   {
-    id: 4,
+    id: 6,
     title: "Little Lemon Website",
     description: "Restaurant Table-Reservation Website bulit using React which contains the About page, Menu page, Reservation page, and optional Order online page to order food",
     image: img4,
@@ -47,7 +67,7 @@ const projectsData = [
     previewUrl: "",
   },
   {
-    id: 5,
+    id: 7,
     title: "NFT Website",
     description: "NFT Website is built using React  for a seamless and interactive experience. It showcases NFT's featuring NFT listings and biddings",
     image: img5,
@@ -55,47 +75,46 @@ const projectsData = [
     gitUrl: "https://github.com/cherylpinto/nft",
     previewUrl: "",
   },
+ 
 ];
 const ProjectSection = () => {
   const [tag, setTag] = useState("All");
+  const [showAll, setShowAll] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
   const handleTagChange = (newTag) => {
     setTag(newTag);
+    setShowAll(false); // Reset view when tag changes
   };
+
   const filteredProjects = projectsData.filter((project) =>
     project.tag.includes(tag)
   );
+
+  const displayedProjects = showAll
+    ? filteredProjects
+    : filteredProjects.slice(0, 4);
+
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
     animate: { y: 0, opacity: 1 },
   };
+
   return (
     <section id="projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6 ">
-        <ProjectTag
-          onClick={handleTagChange}
-          tag="All"
-          isSelected={tag === "All"}
-        ></ProjectTag>
-        <ProjectTag
-          onClick={handleTagChange}
-          tag="Web"
-          isSelected={tag === "Web"}
-        ></ProjectTag>
-        <ProjectTag
-          onClick={handleTagChange}
-          tag="Mobile"
-          isSelected={tag === "Mobile"}
-        ></ProjectTag>
+      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+        <ProjectTag onClick={handleTagChange} tag="All" isSelected={tag === "All"} />
+        <ProjectTag onClick={handleTagChange} tag="Web" isSelected={tag === "Web"} />
+        <ProjectTag onClick={handleTagChange} tag="Mobile" isSelected={tag === "Mobile"} />
       </div>
       <ul ref={ref} className="grid md:grid-cols-2 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
+        {displayedProjects.map((project, index) => (
           <motion.li
-            key={index}
+            key={project.id}
             variants={cardVariants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
@@ -111,8 +130,23 @@ const ProjectSection = () => {
           </motion.li>
         ))}
       </ul>
+
+      {filteredProjects.length > 4 && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => setShowAll((prev) => !prev)}
+            className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3"
+          >
+            <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2 transition">
+              {showAll ? "See Less" : "See More"}
+            </span>
+          </button>
+
+        </div>
+      )}
     </section>
   );
 };
+
 
 export default ProjectSection;
