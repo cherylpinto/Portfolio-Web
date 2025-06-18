@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 const achievementsList = [
   {
     metric: "Projects",
-    value: 7,
+    value: 10,
     postfix: "+",
   },
   {
