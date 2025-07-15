@@ -16,10 +16,16 @@ const TAB_DATA = [
     content: (
       <ul className="">
         <li className="flex items-center gap-2">
+          <img src={arrow} className="w-4.5 h-3"></img>Python, C, C++, Java
+        </li>
+        <li className="flex items-center gap-2">
           <img src={arrow} className="w-4.5 h-3"></img>HTML
         </li>
         <li className="flex items-center gap-2 ">
           <img src={arrow} className="w-4.5 h-3"></img>CSS
+        </li>
+        <li className="flex items-center gap-2 ">
+          <img src={arrow} className="w-4.5 h-3"></img>PHP
         </li>
         <li className="flex items-center gap-2 ">
           <img src={arrow} className="w-4.5 h-3"></img>JavaScript
@@ -28,7 +34,7 @@ const TAB_DATA = [
           <img src={arrow} className="w-4.5 h-3"></img>MERN Stack
         </li>
         <li className="flex items-center gap-2 ">
-          <img src={arrow} className="w-4.5 h-3"></img>PostgreSQL/MySQL/T-SQL
+          <img src={arrow} className="w-4.5 h-3"></img>PostgreSQL/MySQL/T-SQL/Firebase
         </li>
         <li className="flex items-center gap-2 ">
           <img src={arrow} className="w-4.5 h-3"></img>Data Strutures &
@@ -38,7 +44,7 @@ const TAB_DATA = [
           <img src={arrow} className="w-4.5 h-3"></img> SSIS / SSMS / SSAS
         </li>
         <li className="flex items-center gap-2 ">
-          <img src={arrow} className="w-4.5 h-3"></img>Power BI
+          <img src={arrow} className="w-4.5 h-3"></img>Power BI/Excel
         </li>
       </ul>
     ),
