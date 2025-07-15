@@ -14,37 +14,54 @@ const TAB_DATA = [
     id: "skills",
     title: "Skills",
     content: (
-      <ul className="">
-        <li className="flex items-center gap-2">
-          <img src={arrow} className="w-4.5 h-3"></img>Python, C, C++, Java
+      <ul className="space-y-2">
+        <li className="flex items-start gap-2">
+          <img src={arrow} className="w-4.5 h-3 mt-1" />
+          <span>
+            <strong>Programming Languages:</strong> Python, C, Java, C++
+          </span>
         </li>
-        <li className="flex items-center gap-2">
-          <img src={arrow} className="w-4.5 h-3"></img>HTML
+        <li className="flex items-start gap-2">
+          <img src={arrow} className="w-4.5 h-3 mt-1" />
+          <span>
+            <strong>Design Tools:</strong> Figma, AUTOCAD
+          </span>
         </li>
-        <li className="flex items-center gap-2 ">
-          <img src={arrow} className="w-4.5 h-3"></img>CSS
+        <li className="flex items-start gap-2">
+          <img src={arrow} className="w-4.5 h-3 mt-1" />
+          <span>
+            <strong>Web Development:</strong>
+            <br />
+            &nbsp;&nbsp;a. <strong>Frontend:</strong> HTML, CSS/Tailwind CSS,
+            JavaScript, Next.js
+            <br />
+            &nbsp;&nbsp;b. <strong>Backend/Full Stack:</strong> MERN Stack, PHP
+          </span>
         </li>
-        <li className="flex items-center gap-2 ">
-          <img src={arrow} className="w-4.5 h-3"></img>PHP
+        <li className="flex items-start gap-2">
+          <img src={arrow} className="w-4.5 h-3 mt-1" />
+          <span>
+            <strong>Databases:</strong> MySQL, PostgreSQL, Firebase, T-SQL
+          </span>
         </li>
-        <li className="flex items-center gap-2 ">
-          <img src={arrow} className="w-4.5 h-3"></img>JavaScript
+        <li className="flex items-start gap-2">
+          <img src={arrow} className="w-4.5 h-3 mt-1" />
+          <span>
+            <strong>Data & Business Intelligence:</strong> SSIS, SSMS, SSAS,
+            Power BI, Excel, NumPy, Pandas, Matplotlib
+          </span>
         </li>
-        <li className="flex items-center gap-2 ">
-          <img src={arrow} className="w-4.5 h-3"></img>MERN Stack
+        <li className="flex items-start gap-2">
+          <img src={arrow} className="w-4.5 h-3 mt-1" />
+          <span>
+            <strong>Version Control:</strong> Git, GitHub
+          </span>
         </li>
-        <li className="flex items-center gap-2 ">
-          <img src={arrow} className="w-4.5 h-3"></img>PostgreSQL/MySQL/T-SQL/Firebase
-        </li>
-        <li className="flex items-center gap-2 ">
-          <img src={arrow} className="w-4.5 h-3"></img>Data Strutures &
-          Algorithms
-        </li>
-        <li className="flex items-center gap-2 ">
-          <img src={arrow} className="w-4.5 h-3"></img> SSIS / SSMS / SSAS
-        </li>
-        <li className="flex items-center gap-2 ">
-          <img src={arrow} className="w-4.5 h-3"></img>Power BI/Excel
+        <li className="flex items-start gap-2">
+          <img src={arrow} className="w-4.5 h-3 mt-1" />
+          <span>
+            <strong>Data Structures & Algorithms</strong>
+          </span>
         </li>
       </ul>
     ),
@@ -143,7 +160,7 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
+            I am a Data Analyst & a Full Stack Web Developer with a passion for creating
             interactive and responsive web applications. I am a quick learner
             and I am always looking to expand my knowledge and skill set. I am a
             team player and I am excited to work with others to create amazing
